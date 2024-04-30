@@ -1,0 +1,33 @@
+<!--<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:security="http://www.springframework.org/schema/security"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/security
+        http://www.springframework.org/schema/security/spring-security.xsd"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+     auto-config="true" : Spring Security 기본 로그인 폼 사용 
+    <security:http auto-config="true">
+
+        <security:intercept-url pattern="/login.jsp" access="permitAll()"></security:intercept-url>
+
+        <security:intercept-url pattern="/**" access="isAuthenticated()"></security:intercept-url>
+        
+        <security:logout logout-url="/logout.do" logout-success-url="/login?logout" invalidate-session="true"></security:logout>
+        
+         CSRF 보호 비활성화 
+        <security:csrf disabled="true"></security:csrf>
+
+    </security:http>
+
+    <security:authentication-manager>
+        <security:authentication-provider>
+            <security:user-service>
+                <security:user name="teemo" password="{noop}123" authorities="USER"></security:user>
+                <security:user name="admin" password="{noop}123" authorities="ADMIN"></security:user>
+            </security:user-service>
+        </security:authentication-provider>
+    </security:authentication-manager>
+
+</beans>-->
